@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Main Page </title>
+  </head>
+    <body>
+      <h3> <span id="json" onclick="jsonVisible()">JSON</span>
+            <span id="form" onclick="formVisible()">Forms</span></h3>
+
+                <form id="jsonform"><select>
+                                <option value="JSON manipulation" onlick="C:/Users/Admin/Documents/Esther/JavaScriptAssessment/trainerpage.html">JSON manipulation</option>
+                            </select><br>
+                            </form>
+
+                <form id="forms"><select>
+                                <option value="Entry Form" onclick="C:/Users/Admin/Documents/Esther/JavaScriptAssessment/entryformpage.html">Entry Form</option>
+                                <option value="Form Details" onclick="C:/Users/Admin/Documents/Esther/JavaScriptAssessment/formdatapage.html">Form Details</option>
+                            </select><br>
+                          </form>
+
+    </body>
+</html>
+
+
+
+<script>
+  function jsonVisible (){
+  var jsonElement =document.getElementById("json");
+  jsonElement.style.visibility="visible";
+  }
+
+
+  function formVisible (){
+  var formElement =document.getElementById("form");
+  formElement.style.visibility="visible";
+}
+
+</script>

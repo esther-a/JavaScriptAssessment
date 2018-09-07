@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Entry Form</title>
+</head>
+      <body>
+        <h2> Entry Form</h2>
+        <p> Please fill in all required fields</p>
+
+          <form name="entryform" onsubmit="return !!(validName() & validDob() & validAddress() & validCode() & validEmail())" >
+            Name: <input type="text" placeholder="First and Last name" alt="Enter first and last name"  id="name" required="required"/><br>
+            Date Of Birth: <input type="text" placeholder="DD/MM/YYYY" alt="Enter date of birth"  id="dOB" required="required"/><br>
+            Address:<input type="text"  alt="Enter address"  id="address" required="required"/><br>
+            PostCode:<input type="text"  placeholder="AZ19 0AZ"alt="Enter postcode" id="postcode" required="required"/><br>
+            Email: <input type="text" placeholder="someone@something.az" alt="Enter email adress"  id="email" required="required"/><br>
+            <button type"submit" onclick="validateForm()">Submit</button>
+          </form>
+        </body>
+
+</html>
+
+<script>
+
+
+function validName(input){
+var letters = /^[a-zA-Z]+$/;
+var fname = document.getElementById('name');
+if (fname.value ==""){
+  console.log("Field is empty.");
+  return false;
+  }
+
+if (!(fname.value.match(letters))){
+console.log("Illegal character used.")
+  return false
+  }
+}
+
+
+
+function validDob(input){
+var dInput = \d{1,2}\/\d{1,2}\/\d{4};
+var dateOfBirth = document.getElementById('dOB');
+if (dateOfBirth.value ==""){
+  console.log("Field is empty.");
+  return false;
+}
+
+if (!(dateOfBirth.value.match(dInput)){
+  console.log("Wrong format used.")
+  return false
+  }
+}
+
+
+function validAddress(input){
+  var place = document.getElementById('address');
+  var addInput= /^[A-Za-z0-9]+$/;
+
+  if (place.value ==""){
+    console.log("Field is empty.");
+    return false;
+  }
+  if (!(place.value.match(addInput))){
+    console.log("Illegal character used.")
+    return false;
+    }
+  }
+
+
+
+function validCode(input){
+  var zipcode = document.getElementById('postcode');
+  var pcInput= [A-za-z0-9{1,10}];
+
+  if (zipcode.value ==""){
+      console.log("Field is empty.");
+      return false;
+
+  if (!(zipcode.value.match(pcInput))){
+    console.log("Illegal charcter used.")
+    return false;
+  }
+}
+
+
+function validEmail(){
+  var mailaddress = document.getElementById('email');
+  var mailFormat= \w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6};
+
+  if (mailaddress.value ==""){
+      console.log("Field is empty.");
+      return false;
+    }
+
+  if (!(mailaddress.value.match(mailFormat))){
+    console.log("Illegal character used.")
+    return false;
+  }
+}
+
+
+</script>
